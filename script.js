@@ -1,40 +1,41 @@
+// Botões de acessibilidade
 document.addEventListener("DOMContentLoaded", () => {
     const btnContraste = document.getElementById("btn-contraste");
     const btnAumentar = document.getElementById("btn-aumentar-texto");
     const btnDiminuir = document.getElementById("btn-diminuir-texto");
 
-    // Limites de zoom do texto (em porcentagem)
     const TAMANHO_MINIMO = 90;
     const TAMANHO_MAXIMO = 150;
     const PASSO = 10;
 
-    // Recupera configurações salvas no localStorage (ou usa os valores padrão)
+    // Recupera valores do localStorage para manter as preferências do usuário[cite: 3]
     let tamanhoAtualFonte = parseInt(localStorage.getItem("tamanhoFonte")) || 100;
-    const altoContrasteAtivo = localStorage.getItem("altoContraste") === "true";
+    const altoContrasteAtivo = localStorage.getItem("altoContraste") === "true";[cite: 3]
 
-    // Aplica as configurações salvas ao carregar a página
+    // Aplica preferências salvas ao carregar[cite: 3]
     aplicarTamanhoFonte(tamanhoAtualFonte);
     if (altoContrasteAtivo) {
-        document.body.classList.add("alto-contraste");
-        if (btnContraste) btnContraste.setAttribute("aria-pressed", "true");
+        document.body.classList.add("alto-contraste");[cite: 3]
+        if (btnContraste) btnContraste.setAttribute("aria-pressed", "true");[cite: 3]
     }
 
-    // Função para alterar o tamanho da fonte no HTML
     function aplicarTamanhoFonte(tamanho) {
         document.documentElement.style.fontSize = `${tamanho}%`;
         localStorage.setItem("tamanhoFonte", tamanho);
     }
 
-    // 1. Funcionalidade: Alto Contraste
+    // Função alto contraste
     if (btnContraste) {
         btnContraste.addEventListener("click", () => {
             const ativo = document.body.classList.toggle("alto-contraste");
+
+            // Acessibilidade para leitores de tela e persistência de dados[cite: 3]
             btnContraste.setAttribute("aria-pressed", ativo);
-            localStorage.setItem("altoContraste", ativo);
+            localStorage.setItem("altoContraste", ativo);[cite: 3]
         });
     }
 
-    // 2. Funcionalidade: Aumentar Texto
+    // Função aumentar texto
     if (btnAumentar) {
         btnAumentar.addEventListener("click", () => {
             if (tamanhoAtualFonte < TAMANHO_MAXIMO) {
@@ -44,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 3. Funcionalidade: Diminuir Texto
+    // Função diminuir texto
     if (btnDiminuir) {
         btnDiminuir.addEventListener("click", () => {
             if (tamanhoAtualFonte > TAMANHO_MINIMO) {
