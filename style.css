@@ -1,0 +1,308 @@
+/* ==========================================================================
+   Estilos Gerais e Variáveis (Tema em Tons de Verde)
+   ========================================================================== */
+:root {
+    --primary-color: #1b4d3e;      /* Verde escuro floresta */
+    --primary-light: #2c7a5f;      /* Verde médio */
+    --accent-color: #4eb882;       /* Verde claro / esmeralda viva */
+    --bg-light: #f4f8f5;           /* Fundo suave esverdeado */
+    --card-bg: #ffffff;            /* Fundo dos cartões */
+    --text-dark: #22332b;          /* Texto principal escuro */
+    --text-muted: #52665a;         /* Texto secundário */
+    --border-color: #d1e2d8;       /* Bordas delicadas */
+    --shadow: 0 4px 15px rgba(27, 77, 62, 0.08);
+    --border-radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==========================================================================
+   Header / Navegação
+   ========================================================================== */
+header {
+    background-color: var(--primary-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo span {
+    color: var(--accent-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav a {
+    color: #e0f2e9;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+/* ==========================================================================
+   Hero Banner
+   ========================================================================== */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+    color: #ffffff;
+    padding: 80px 0;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    color: #e0f2e9;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #66d49b;
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Seções do Conteúdo Principal
+   ========================================================================== */
+.card-section {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+}
+
+.section-title {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--accent-color);
+}
+
+.intro-text {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin-bottom: 25px;
+}
+
+/* Layout de Grid com 2 Colunas */
+.grid-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+/* Listas estilizadas */
+.feature-list {
+    list-style: none;
+}
+
+.feature-list > li {
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.feature-list > li::before {
+    content: "•";
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -3px;
+}
+
+.sub-list {
+    margin-top: 8px;
+    padding-left: 20px;
+    list-style-type: circle;
+}
+
+.sub-list li {
+    margin-bottom: 5px;
+    color: var(--text-muted);
+}
+
+/* Bloco de Imagens */
+.image-block figure {
+    margin: 0;
+}
+
+.image-block img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+figcaption {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 8px;
+    font-style: italic;
+}
+
+/* Cards dos Animais */
+.animal-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.animal-item {
+    background-color: var(--bg-light);
+    padding: 15px 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-light);
+}
+
+.animal-item h3 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.animal-item p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Tabela de Problemas Oculares
+   ========================================================================== */
+.table-responsive {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #f9fbf9;
+}
+
+tr:hover {
+    background-color: #eef6f1;
+}
+
+td strong {
+    color: var(--primary-color);
+}
+
+/* ==========================================================================
+   Rodapé
+   ========================================================================== */
+footer {
+    background-color: var(--primary-color);
+    color: #e0f2e9;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 50px;
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   Responsividade
+   ========================================================================== */
+@media (max-width: 768px) {
+    .grid-2col {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 0;
+        gap: 10px;
+    }
+
+    .card-section {
+        padding: 25px;
+    }
+}
