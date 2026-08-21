@@ -177,47 +177,30 @@
         </div>
     </footer>
 
-</body>
-</html>
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acessibilidade: Alto Contraste e Fonte</title>
+    <title>Acessibilidade</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Barra de Acessibilidade -->
-    <div class="accessibility-bar" role="region" aria-label="Controles de Acessibilidade">
-        <div class="container accessibility-container">
-            <span class="accessibility-title">Acessibilidade:</span>
-            <div class="accessibility-buttons">
-                <button id="btn-contraste" aria-pressed="false" title="Alternar Alto Contraste">
-                    🌗 Alto Contraste
-                </button>
-                <button id="btn-aumentar-texto" title="Aumentar tamanho do texto">
-                    A+
-                </button>
-                <button id="btn-diminuir-texto" title="Diminuir tamanho do texto">
-                    A-
-                </button>
-            </div>
-        </div>
+    <!-- Botões de Acessibilidade -->
+    <div class="accessibility-bar">
+        <button id="btn-contraste" type="button" aria-pressed="false">🌗 Alto Contraste</button>
+        <button id="btn-aumentar-texto" type="button">A+</button>
+        <button id="btn-diminuir-texto" type="button">A-</button>
     </div>
 
-    <!-- Conteúdo Principal -->
-    <main class="container content">
-        <h1>Exemplo de Acessibilidade</h1>
-        <p>Utilize os botões no topo da página para alterar o contraste de cores ou ajustar o tamanho do texto.</p>
-        
-        <div class="card">
-            <h2>Cartão Informativo</h2>
-            <p>Os estilos deste cartão se adaptam automaticamente ao modo de alto contraste.</p>
-        </div>
+    <!-- Conteúdo da Página -->
+    <main class="content">
+        <h1>Teste de Acessibilidade</h1>
+        <p>Clique nos botões acima para alterar o tamanho da fonte e o alto contraste.</p>
     </main>
 
+    <!-- O script deve ser chamado no final do body -->
     <script src="script.js"></script>
 </body>
 </html>
