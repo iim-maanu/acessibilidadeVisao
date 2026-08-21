@@ -1,130 +1,51 @@
-/* ==========================================================================
-   1. Variáveis e Tema Padrão
-   ========================================================================== */
+/* Variáveis de Cores Padrão */
 :root {
-    --bg-primary: #f4f8f5;
-    --bg-card: #ffffff;
-    --text-primary: #22332b;
-    --text-secondary: #52665a;
-    --primary-color: #1b4d3e;
-    --primary-light: #2c7a5f;
-    --accent-color: #4eb882;
-    --border-color: #d1e2d8;
-    --shadow: 0 4px 15px rgba(27, 77, 62, 0.08);
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --btn-bg: #007bff;
+    --btn-text: #ffffff;
 }
 
-/* Modo Alto Contraste */
+/* Variáveis de Alto Contraste */
 body.alto-contraste {
-    --bg-primary: #000000;
-    --bg-card: #121212;
-    --text-primary: #ffff00;   /* Amarelo de alto contraste */
-    --text-secondary: #ffffff;
-    --primary-color: #ffff00;
-    --primary-light: #000000;
-    --accent-color: #ffff00;
-    --border-color: #ffff00;
-    --shadow: none;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    --bg-color: #000000;
+    --text-color: #ffff00; /* Texto Amarelo */
+    --btn-bg: #ffff00;
+    --btn-text: #000000;
 }
 
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
-    line-height: 1.6;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.2s, color 0.2s;
 }
 
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* ==========================================================================
-   2. Barra de Acessibilidade
-   ========================================================================== */
+/* Barra de Botões */
 .accessibility-bar {
-    background-color: var(--primary-color);
-    color: #ffffff;
-    padding: 10px 0;
-    border-bottom: 2px solid var(--border-color);
-}
-
-body.alto-contraste .accessibility-bar {
-    background-color: #000000;
-}
-
-.accessibility-container {
+    margin-bottom: 20px;
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 15px;
+    gap: 10px;
 }
 
-.accessibility-title {
-    font-weight: 600;
-}
-
-.accessibility-buttons {
-    display: flex;
-    gap: 8px;
-}
-
-.accessibility-buttons button {
-    background-color: var(--primary-light);
-    color: #ffffff;
-    border: 1px solid var(--accent-color);
-    padding: 6px 12px;
-    border-radius: 4px;
+.accessibility-bar button {
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: 2px solid var(--text-color);
+    padding: 10px 15px;
+    font-size: 1rem;
     cursor: pointer;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: all 0.2s ease;
+    border-radius: 5px;
+    font-weight: bold;
 }
 
-.accessibility-buttons button:hover {
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-}
-
-body.alto-contraste .accessibility-buttons button {
-    background-color: #ffff00;
-    color: #000000;
-    border: 1px solid #ffffff;
-}
-
-/* ==========================================================================
-   3. Estilos do Conteúdo
-   ========================================================================== */
-.content {
-    margin-top: 40px;
-}
-
+/* Uso de rem nos elementos para permitir alteração da fonte via JS */
 h1 {
-    color: var(--primary-color);
-    margin-bottom: 15px;
+    font-size: 2rem;
 }
 
 p {
-    color: var(--text-secondary);
-    margin-bottom: 20px;
-}
-
-.card {
-    background-color: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: var(--shadow);
-}
-
-.card h2 {
-    color: var(--primary-color);
-    margin-bottom: 10px;
+    font-size: 1rem;
 }
