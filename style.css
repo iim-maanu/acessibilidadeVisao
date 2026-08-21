@@ -1,342 +1,31 @@
 /* ==========================================================================
-   Estilos Gerais e Variáveis (Tema em Tons de Verde)
+   1. Variáveis e Tema Padrão
    ========================================================================== */
 :root {
-    --primary-color: #1b4d3e;      /* Verde escuro floresta */
-    --primary-light: #2c7a5f;      /* Verde médio */
-    --accent-color: #4eb882;       /* Verde claro / esmeralda viva */
-    --bg-light: #f4f8f5;           /* Fundo suave esverdeado */
-    --card-bg: #ffffff;            /* Fundo dos cartões */
-    --text-dark: #22332b;          /* Texto principal escuro */
-    --text-muted: #52665a;         /* Texto secundário */
-    --border-color: #d1e2d8;       /* Bordas delicadas */
-    --shadow: 0 4px 15px rgba(27, 77, 62, 0.08);
-    --border-radius: 12px;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background-color: var(--bg-light);
-    color: var(--text-dark);
-    line-height: 1.6;
-    scroll-behavior: smooth;
-}
-
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* ==========================================================================
-   Header / Navegação
-   ========================================================================== */
-header {
-    background-color: var(--primary-color);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 70px;
-}
-
-.logo {
-    color: #ffffff;
-    font-size: 1.5rem;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.logo span {
-    color: var(--accent-color);
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-}
-
-nav a {
-    color: #e0f2e9;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: var(--accent-color);
-}
-
-/* ==========================================================================
-   Hero Banner
-   ========================================================================== */
-.hero {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
-    color: #ffffff;
-    padding: 80px 0;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.hero-content h1 {
-    font-size: 2.8rem;
-    margin-bottom: 15px;
-    font-weight: 700;
-}
-
-.hero-content p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto 30px auto;
-    color: #e0f2e9;
-}
-
-.btn {
-    display: inline-block;
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-    padding: 12px 28px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 700;
-    transition: transform 0.2s ease, background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #66d49b;
-    transform: translateY(-2px);
-}
-
-/* ==========================================================================
-   Seções do Conteúdo Principal
-   ========================================================================== */
-.card-section {
-    background-color: var(--card-bg);
-    border-radius: var(--border-radius);
-    padding: 40px;
-    margin-bottom: 40px;
-    box-shadow: var(--shadow);
-    border: 1px solid var(--border-color);
-}
-
-.section-title {
-    color: var(--primary-color);
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-    border-bottom: 3px solid var(--accent-color);
-}
-
-.intro-text {
-    font-size: 1.05rem;
-    color: var(--text-muted);
-    margin-bottom: 25px;
-}
-
-/* Layout de Grid com 2 Colunas */
-.grid-2col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    align-items: center;
-}
-
-/* Listas estilizadas */
-.feature-list {
-    list-style: none;
-}
-
-.feature-list > li {
-    margin-bottom: 15px;
-    position: relative;
-    padding-left: 20px;
-}
-
-.feature-list > li::before {
-    content: "•";
-    color: var(--accent-color);
-    font-size: 1.5rem;
-    position: absolute;
-    left: 0;
-    top: -3px;
-}
-
-.sub-list {
-    margin-top: 8px;
-    padding-left: 20px;
-    list-style-type: circle;
-}
-
-.sub-list li {
-    margin-bottom: 5px;
-    color: var(--text-muted);
-}
-
-/* Bloco de Imagens */
-.image-block figure {
-    margin: 0;
-}
-
-.image-block img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-figcaption {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    text-align: center;
-    margin-top: 8px;
-    font-style: italic;
-}
-
-/* Cards dos Animais */
-.animal-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.animal-item {
-    background-color: var(--bg-light);
-    padding: 15px 20px;
-    border-radius: 8px;
-    border-left: 4px solid var(--primary-light);
-}
-
-.animal-item h3 {
-    color: var(--primary-color);
-    font-size: 1.1rem;
-    margin-bottom: 5px;
-}
-
-.animal-item p {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-}
-
-/* ==========================================================================
-   Tabela de Problemas Oculares
-   ========================================================================== */
-.table-responsive {
-    overflow-x: auto;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
-}
-
-th, td {
-    padding: 14px 16px;
-    text-align: left;
-    border-bottom: 1px solid var(--border-color);
-}
-
-th {
-    background-color: var(--primary-color);
-    color: #ffffff;
-    font-weight: 600;
-}
-
-tr:nth-child(even) {
-    background-color: #f9fbf9;
-}
-
-tr:hover {
-    background-color: #eef6f1;
-}
-
-td strong {
-    color: var(--primary-color);
-}
-
-/* ==========================================================================
-   Rodapé
-   ========================================================================== */
-footer {
-    background-color: var(--primary-color);
-    color: #e0f2e9;
-    text-align: center;
-    padding: 25px 0;
-    margin-top: 50px;
-    font-size: 0.9rem;
-}
-
-/* ==========================================================================
-   Responsividade
-   ========================================================================== */
-@media (max-width: 768px) {
-    .grid-2col {
-        grid-template-columns: 1fr;
-    }
-    
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-
-    .nav-container {
-        flex-direction: column;
-        height: auto;
-        padding: 15px 0;
-        gap: 10px;
-    }
-
-    .card-section {
-        padding: 25px;
-    }
-}
-
-/* ==========================================================================
-   1. Variáveis de Cores (Padrão vs Alto Contraste)
-   ========================================================================== */
-:root {
-    /* Cores do Tema Normal */
-    --bg-primary: #f4f7f6;
+    --bg-primary: #f4f8f5;
     --bg-card: #ffffff;
-    --text-primary: #212529;
-    --text-secondary: #495057;
+    --text-primary: #22332b;
+    --text-secondary: #52665a;
     --primary-color: #1b4d3e;
-    --primary-hover: #143a2f;
-    --border-color: #dcdfe3;
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --primary-light: #2c7a5f;
+    --accent-color: #4eb882;
+    --border-color: #d1e2d8;
+    --shadow: 0 4px 15px rgba(27, 77, 62, 0.08);
 }
 
-/* Modo Alto Contraste (Ativado via JS) */
+/* Modo Alto Contraste */
 body.alto-contraste {
     --bg-primary: #000000;
     --bg-card: #121212;
     --text-primary: #ffff00;   /* Amarelo de alto contraste */
     --text-secondary: #ffffff;
     --primary-color: #ffff00;
-    --primary-hover: #ffffff;
+    --primary-light: #000000;
+    --accent-color: #ffff00;
     --border-color: #ffff00;
-    --shadow: 0 0 10px rgba(255, 255, 0, 0.3);
+    --shadow: none;
 }
 
-/* ==========================================================================
-   2. Estilos Gerais
-   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -349,84 +38,93 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     transition: background-color 0.3s ease, color 0.3s ease;
-    padding: 2rem;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 /* ==========================================================================
-   3. Estilo do Botão de Acessibilidade
+   2. Barra de Acessibilidade
    ========================================================================== */
-.accessibility-widget {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 9999;
-}
-
-.contrast-toggle-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+.accessibility-bar {
     background-color: var(--primary-color);
     color: #ffffff;
-    border: 2px solid transparent;
-    padding: 10px 18px;
-    border-radius: 30px;
+    padding: 10px 0;
+    border-bottom: 2px solid var(--border-color);
+}
+
+body.alto-contraste .accessibility-bar {
+    background-color: #000000;
+}
+
+.accessibility-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+}
+
+.accessibility-title {
     font-weight: 600;
-    font-size: 0.95rem;
+}
+
+.accessibility-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.accessibility-buttons button {
+    background-color: var(--primary-light);
+    color: #ffffff;
+    border: 1px solid var(--accent-color);
+    padding: 6px 12px;
+    border-radius: 4px;
     cursor: pointer;
-    box-shadow: var(--shadow);
-    transition: all 0.2s ease-in-out;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
 }
 
-.contrast-toggle-btn:hover {
-    background-color: var(--primary-hover);
-    transform: translateY(-2px);
+.accessibility-buttons button:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
 }
 
-.contrast-toggle-btn:focus-visible {
-    outline: 3px solid #005fcc;
-    outline-offset: 3px;
-}
-
-/* Ajustes no botão no modo alto contraste */
-body.alto-contraste .contrast-toggle-btn {
+body.alto-contraste .accessibility-buttons button {
+    background-color: #ffff00;
     color: #000000;
-    border-color: #ffffff;
+    border: 1px solid #ffffff;
 }
 
 /* ==========================================================================
-   4. Componentes da Exemplo
+   3. Estilos do Conteúdo
    ========================================================================== */
-.demo-container {
-    max-width: 700px;
-    margin: 80px auto 0 auto;
+.content {
+    margin-top: 40px;
 }
 
-.demo-card {
-    background-color: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 24px;
-    margin-top: 20px;
-    box-shadow: var(--shadow);
-}
-
-.demo-card h2 {
+h1 {
     color: var(--primary-color);
-    margin-bottom: 10px;
-}
-
-.demo-card p {
-    color: var(--text-secondary);
     margin-bottom: 15px;
 }
 
-.demo-btn {
-    background-color: transparent;
-    color: var(--text-primary);
-    border: 2px solid var(--border-color);
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
+p {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+}
+
+.card h2 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
 }

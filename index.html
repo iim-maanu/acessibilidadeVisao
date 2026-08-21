@@ -179,3 +179,45 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acessibilidade: Alto Contraste e Fonte</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Barra de Acessibilidade -->
+    <div class="accessibility-bar" role="region" aria-label="Controles de Acessibilidade">
+        <div class="container accessibility-container">
+            <span class="accessibility-title">Acessibilidade:</span>
+            <div class="accessibility-buttons">
+                <button id="btn-contraste" aria-pressed="false" title="Alternar Alto Contraste">
+                    🌗 Alto Contraste
+                </button>
+                <button id="btn-aumentar-texto" title="Aumentar tamanho do texto">
+                    A+
+                </button>
+                <button id="btn-diminuir-texto" title="Diminuir tamanho do texto">
+                    A-
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <main class="container content">
+        <h1>Exemplo de Acessibilidade</h1>
+        <p>Utilize os botões no topo da página para alterar o contraste de cores ou ajustar o tamanho do texto.</p>
+        
+        <div class="card">
+            <h2>Cartão Informativo</h2>
+            <p>Os estilos deste cartão se adaptam automaticamente ao modo de alto contraste.</p>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
